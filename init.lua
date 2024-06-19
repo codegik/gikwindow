@@ -18,27 +18,27 @@ local function currentWindows()
 end
 
 local function focusNextOnThisSpace(direction)
-  local currWindow = hs.window.focusedWindow()
-  local windows = spaceFilter:getWindows()
+	local currWindow = hs.window.focusedWindow()
+	local windows = spaceFilter:getWindows()
 
 	for i, window in ipairs(windows) do
 		if window:isVisible() then
-      if window:id() == currWindow:id() then
-        local selected = i + direction
+			if window:id() == currWindow:id() then
+				local selected = i + direction
 
-        if selected <= 0 then
-          selected = #windows
-        elseif selected > #windows then
-          selected = 1
-        end
+				if selected <= 0 then
+					selected = #windows
+				elseif selected > #windows then
+					selected = 1
+				end
 
-        windows[selected]:focus()
-        return true
-      end
+				windows[selected]:focus()
+				return true
+			end
 		end
 	end
 
-  return false
+	return false
 end
 
 local function focusByApp(appName)
