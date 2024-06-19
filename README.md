@@ -15,5 +15,7 @@ echo 'require("gikwindow")' >> ~/.hammerspoon/init.lua
 
 | Shortcut | Action | Description |
 |----------|----------|----------|
-| alt + z    | Focus zoom window   | Its going to search zoom app and focus it.   |
+| alt + z              | Focus zoom window       | Search zoom app over all spaces and focus it.   |
+| alt + tab            | Focus next window       | Focus next window in currect space.   |
+| alt + shift + tab    | Focus previous window   | Focus previous window in currect space.   |
 
