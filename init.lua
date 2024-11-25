@@ -45,7 +45,8 @@ local function focusByApp(appName)
 	local windows = currentWindows()
 
 	for i, v in ipairs(windows) do
-		if string.find(v:application():name(), appName) then
+    print(v:application():name())
+		if string.find(string.lower(v:application():name()), string.lower(appName)) then
 			v:focus()
 			return v
 		end
@@ -56,6 +57,14 @@ end
 
 hs.hotkey.bind({ "alt" }, "z", function()
 	focusByApp("zoom")
+end)
+
+hs.hotkey.bind({ "alt" }, "o", function()
+	focusByApp("opera")
+end)
+
+hs.hotkey.bind({ "alt" }, "s", function()
+	focusByApp("slack")
 end)
 
 hs.hotkey.bind({ "alt" }, "tab", function()
